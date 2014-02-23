@@ -9,8 +9,4 @@ html
 		script(src="CreateCharacter.js")
 	body(ng-app="ngBindHtml")
 		div(ng-controller = "myCtrl")
-			div(ng-bind-html = "myCtrl.explicitlyTrustedHtml", id = "explicitlyTrustedHtml")
-				//nothing inside this div works.
-				|{{myCtrl.explicitlyTrustedHtml}}
-				p.
-					WORDS
+			div(ng-bind-html = "explicitlyTrustedHtml", id = "explicitlyTrustedHtml")

@@ -1,75 +1,64 @@
-//temporary includes
-doctype html 
-html(lang = "en")
-	head
-		script(src = "js/Jquery.min.js")
-		script(src = "js/angular.min.js")
-		link(rel = "stylesheet", type = "text/css", href = "css/bootstrap.min.css")
-		script(src = "js/bootstrap.min.js")
-	body(ng-app = "")
-		//end of temp includes
-		div(class = "input-group" id = "NameInput")
-			span(class = "input-group-addon")
-				|Name 
-			input(type = "text", class = "form-control" placeholder = "Insert Name Here")
+div(ng-app = "ngBindHtml")
+	div(class = "input-group" id = "NameInput")
+		span(class = "input-group-addon")
+			|Name 
+		input(type = "text", class = "form-control" placeholder = "Insert Name Here")
+
+	div(class = "input-group" id = "LevelInput")
+		span(class = "input-group-addon")
+			|Level 
+		input(type = "text", class = "form-control" placeholder = "Whole numbers from 1-20 please")
+
+	div(class = "row")
+		div(class = "col-lg-6")
+			div(class = "input-group")
+				div(class = "input-group-btn")
+					button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
+						|Class 
+						span(class = "caret")
+					ul(class = "dropdown-menu")
+						div(ng-init= "Classes = [{class:'Barbarian'},{class:'Bard'},{class:'Cleric'},{class:'Druid'},{class:'Fighter'},{class:'Monk'},{class:'Paladin'},{class:'Ranger'},{class:'Rogue'},{class:'Sorcerer'},{class:'Wizard'}]")
+							li(ng-repeat="class in Classes")
+								ul: a(class = "lists")
+									|{{class.class}}
+				input(type = "text", class = "form-control", id = "ClassInput", placeholder = "Insert Class Here")
 
 
-		div(class = "input-group" id = "LevelInput")
-			span(class = "input-group-addon")
-				|Level 
-			input(type = "text", class = "form-control" placeholder = "Whole numbers from 1-20 please")
+		div(class = "col-lg-6")
+			div(class = "input-group")
+				div(class = "input-group-btn")
+					button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
+						|Race 
+						span(class = "caret")
+					ul(class = "dropdown-menu")
+						div(ng-init= "Races = [{race:'Dwarf'}, {race:'Elf'},{race:'Gnome'},{race:'Half-Elf'},{race:'Halfling'},{race:'Half-Orc'},{race:'Human'}]")
+							li(ng-repeat="race in Races")
+								ul: a(class = "lists")
+									|{{race.race}}
+				input(type = "text", class = "form-control", id = "RaceInput", placeholder = "Insert Race Here")
 
-		div(class = "row")
-			div(class = "col-lg-6")
-				div(class = "input-group")
-					div(class = "input-group-btn")
-						button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
-							|Class 
-							span(class = "caret")
-						ul(class = "dropdown-menu")
-							div(ng-init= "Classes = [{class:'Barbarian'},{class:'Bard'},{class:'Cleric'},{class:'Druid'},{class:'Fighter'},{class:'Monk'},{class:'Paladin'},{class:'Ranger'},{class:'Rogue'},{class:'Sorcerer'},{class:'Wizard'}]")
-								li(ng-repeat="class in Classes")
-										ul: a(class = "lists")
-											|{{class.class}}
-					input(type = "text", class = "form-control", id = "ClassInput", placeholder = "Insert Class Here")
-
-
-			div(class = "col-lg-6")
-				div(class = "input-group")
-					div(class = "input-group-btn")
-						button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
-							|Race 
-							span(class = "caret")
-						ul(class = "dropdown-menu")
-							div(ng-init= "Races = [{race:'Dwarf'}, {race:'Elf'},{race:'Gnome'},{race:'Half-Elf'},{race:'Halfling'},{race:'Half-Orc'},{race:'Human'}]")
-								li(ng-repeat="race in Races")
-										ul: a(class = "lists")
-											|{{race.race}}
-					input(type = "text", class = "form-control", id = "RaceInput", placeholder = "Insert Race Here")
-
-			div(class = "col-lg-6")
-				div(class = "input-group")
-					div(class = "input-group-btn")
-						button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
-							|Gender 
-							span(class = "caret")
-						ul(class = "dropdown-menu")
-							div(ng-init= "Genders = [{gender:'Male'}, {gender:'Female'}, {gender:'Neither'}, {gender:'Other'}]")
-								li(ng-repeat="gender in Genders")
-										ul: a(class = "lists")
-											|{{gender.gender}}
-					input(type = "text", class = "form-control", id = "GenderInput", placeholder = "Insert Gender Here")
-			
-			div(class = "col-lg-6")
-				div(class = "input-group")
-					div(class = "input-group-btn")
-						button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
-							|Alignment 
-							span(class = "caret")
-						ul(class = "dropdown-menu")
-							div(ng-init= "Alignments = [{alignment:'Lawful / Good'}, {alignment:'Lawful / Nuetral'}, {alignment:'Lawful / Evil'}, {alignment:'Nuetral / Good'}, {alignment:'Nuetral / Nuetral'}, {alignment:'Nuetral / Evil'}, {alignment:'Chaotic / Good'}, {alignment:'Chaotic / Nuetral'}, {alignment:'Chaotic / Evil'}]")
-								li(ng-repeat="alignment in Alignments")
-										ul: a(class = "lists")
-											|{{alignment.alignment}}
-					input(type = "text", class = "form-control", id = "AlignmentInput", placeholder = "Insert Alignment Here")
-
+		div(class = "col-lg-6")
+			div(class = "input-group")
+				div(class = "input-group-btn")
+					button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
+						|Gender 
+						span(class = "caret")
+					ul(class = "dropdown-menu")
+						div(ng-init= "Genders = [{gender:'Male'}, {gender:'Female'}, {gender:'Neither'}, {gender:'Other'}]")
+							li(ng-repeat="gender in Genders")
+								ul: a(class = "lists")
+									|{{gender.gender}}
+				input(type = "text", class = "form-control", id = "GenderInput", placeholder = "Insert Gender Here")
+				
+		div(class = "col-lg-6")
+			div(class = "input-group")
+				div(class = "input-group-btn")
+					button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
+						|Alignment 
+						span(class = "caret")
+					ul(class = "dropdown-menu")
+						div(ng-init= "Alignments = [{alignment:'Lawful / Good'}, {alignment:'Lawful / Nuetral'}, {alignment:'Lawful / Evil'}, {alignment:'Nuetral / Good'}, {alignment:'Nuetral / Nuetral'}, {alignment:'Nuetral / Evil'}, {alignment:'Chaotic / Good'}, {alignment:'Chaotic / Nuetral'}, {alignment:'Chaotic / Evil'}]")
+							li(ng-repeat="alignment in Alignments")
+								ul: a(class = "lists")
+									|{{alignment.alignment}}
+				input(type = "text", class = "form-control", id = "AlignmentInput", placeholder = "Insert Alignment Here")

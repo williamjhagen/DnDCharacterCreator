@@ -1,26 +1,16 @@
-//temporary includes
-doctype html 
-html(lang = "en")
-	head
-		script(src = "js/Jquery.min.js")
-		script(src = "js/angular.min.js")
-		link(rel = "stylesheet", type = "text/css", href = "css/bootstrap.min.css")
-		script(src = "js/bootstrap.min.js")
-	body(ng-app = "")
-		//end of temp includes
-		button(type = "button", class = "btn btn-default btn-lg")
-			|Roll Stats!
-		div(class = "statsDiv" ng-init="Stats =[{stat:'Strength'}, {stat:'Dexterity'}, {stat:'Constitution'}, {stat: 'Intelligence'}, {stat: 'Wisdom'}, {stat: 'Charisma'}, {stat: 'Dropped'}]")
-			div(class = "row")
-				div(class = "col-sm-1")
-					div(class = "stats", ng-repeat="stat in Stats")
-						span(class="input-group-addon")
-							|0
-						div(class = "input-group-btn")
-							button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
-								|{{stat.stat}} 
-								span(class = "caret")
-							ul(class = "dropdown-menu")
-								li(ng-repeat="iStat in Stats")
-									ul: a(class = "statList")
-										|{{iStat.stat}}
+button(type = "button", class = "btn btn-default btn-lg")
+	|Roll Stats!
+div(class = "statsDiv" ng-init="Stats =[{stat:'Strength'}, {stat:'Dexterity'}, {stat:'Constitution'}, {stat: 'Intelligence'}, {stat: 'Wisdom'}, {stat: 'Charisma'}, {stat: 'Dropped'}]")
+	div(class = "row")
+		div(class = "col-sm-1")
+			div(class = "stats", ng-repeat="stat in Stats")
+				span(class="input-group-addon")
+					|0
+				div(class = "input-group-btn")
+					button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
+						|{{stat.stat}} 
+						span(class = "caret")
+					ul(class = "dropdown-menu")
+						li(ng-repeat="iStat in Stats")
+							ul: a(class = "statList")
+								|{{iStat.stat}}
