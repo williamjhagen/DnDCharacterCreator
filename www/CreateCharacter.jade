@@ -1,0 +1,16 @@
+doctype html
+html
+	head
+		script(src="js/Jquery.min.js")
+		script(src="http://code.angularjs.org/1.2.12/angular.min.js")
+		script(src="http://code.angularjs.org/1.2.12/angular-sanitize.min.js")
+		script(src="js/bootstrap.min.js")
+		link(rel = "stylesheet", type = "text/css", href = "css/bootstrap.min.css")
+		script(src="CreateCharacter.js")
+	body(ng-app="ngBindHtml")
+		div(ng-controller = "myCtrl")
+			div(ng-bind-html = "myCtrl.explicitlyTrustedHtml", id = "explicitlyTrustedHtml")
+				//nothing inside this div works.
+				|{{myCtrl.explicitlyTrustedHtml}}
+				p.
+					WORDS

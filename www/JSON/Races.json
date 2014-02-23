@@ -1,0 +1,11 @@
+{
+	"races":[
+		"Dwarf", 
+		"Elf", 
+		"Gnome", 
+		"Half Elf", 
+		"Halfling", 
+		"Half-Orc", 
+		"Human"
+	]
+}
