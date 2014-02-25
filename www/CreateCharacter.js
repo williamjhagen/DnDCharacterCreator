@@ -1,10 +1,11 @@
 var pageNum = 0;
 var scope;
-var pages = [ getFile("BasicInfo.html"), getFile("Stats.html")];
+var pages = [ getFile("BasicInfo.html"), getFile("Stats.html"), getFile("Backstory.html")];
+var currentPage = pages[pageNum];
 var myApp = angular.module('ngBindHtml',['ngSanitize'])
 
 myApp.controller('myCtrl', function myCtrl($sce, $scope) {
-	$scope.explicitlyTrustedHtml = $sce.trustAsHtml(pages[pageNum]);
+	$scope.explicitlyTrustedHtml = $sce.trustAsHtml(currentPage);
 });
 
 function getFile(nameOfFile){
@@ -13,4 +14,10 @@ function getFile(nameOfFile){
 	request.send(null);
 	var ret = request.responseText;
 	return ret;
+}
+
+function nextPage(){
+	console.log("here");
+	++pageNum;
+	currentPage = pages[pageNum];
 }

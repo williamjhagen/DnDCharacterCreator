@@ -1,4 +1,4 @@
-div(ng-app = "ngBindHtml")
+div(ng-app = "ngBindHtml", id = "BasicInfoDiv")
 	div(class = "input-group" id = "NameInput")
 		span(class = "input-group-addon")
 			|Name 
@@ -17,10 +17,16 @@ div(ng-app = "ngBindHtml")
 						|Class 
 						span(class = "caret")
 					ul(class = "dropdown-menu")
-						div(ng-init= "Classes = [{class:'Barbarian'},{class:'Bard'},{class:'Cleric'},{class:'Druid'},{class:'Fighter'},{class:'Monk'},{class:'Paladin'},{class:'Ranger'},{class:'Rogue'},{class:'Sorcerer'},{class:'Wizard'}]")
-							li(ng-repeat="class in Classes")
-								ul: a(class = "lists")
-									|{{class.class}}
+						ul: a(class = "lists") Barbarian
+						ul: a(class = "lists") Bard
+						ul: a(class = "lists") Druid
+						ul: a(class = "lists") Fighter
+						ul: a(class = "lists") Monk
+						ul: a(class = "lists") Paladin
+						ul: a(class = "lists") Ranger
+						ul: a(class = "lists") Rogue
+						ul: a(class = "lists") Sorcerer
+						ul: a(class = "lists") Wizard
 				input(type = "text", class = "form-control", id = "ClassInput", placeholder = "Insert Class Here")
 
 
@@ -31,10 +37,13 @@ div(ng-app = "ngBindHtml")
 						|Race 
 						span(class = "caret")
 					ul(class = "dropdown-menu")
-						div(ng-init= "Races = [{race:'Dwarf'}, {race:'Elf'},{race:'Gnome'},{race:'Half-Elf'},{race:'Halfling'},{race:'Half-Orc'},{race:'Human'}]")
-							li(ng-repeat="race in Races")
-								ul: a(class = "lists")
-									|{{race.race}}
+						ul: a(class = "lists") Dwarf
+						ul: a(class = "lists") Elf
+						ul: a(class = "lists") Gnome
+						ul: a(class = "lists") Half-Elf
+						ul: a(class = "lists") Halfling
+						ul: a(class = "lists") Half-Orc
+						ul: a(class = "lists") Human
 				input(type = "text", class = "form-control", id = "RaceInput", placeholder = "Insert Race Here")
 
 		div(class = "col-lg-6")
@@ -44,12 +53,12 @@ div(ng-app = "ngBindHtml")
 						|Gender 
 						span(class = "caret")
 					ul(class = "dropdown-menu")
-						div(ng-init= "Genders = [{gender:'Male'}, {gender:'Female'}, {gender:'Neither'}, {gender:'Other'}]")
-							li(ng-repeat="gender in Genders")
-								ul: a(class = "lists")
-									|{{gender.gender}}
+						ul: a(class = "lists") Male
+						ul: a(class = "lists") Female
+						ul: a(class = "lists") Neither
+						ul: a(class = "lists") Other
 				input(type = "text", class = "form-control", id = "GenderInput", placeholder = "Insert Gender Here")
-				
+						
 		div(class = "col-lg-6")
 			div(class = "input-group")
 				div(class = "input-group-btn")
@@ -57,8 +66,13 @@ div(ng-app = "ngBindHtml")
 						|Alignment 
 						span(class = "caret")
 					ul(class = "dropdown-menu")
-						div(ng-init= "Alignments = [{alignment:'Lawful / Good'}, {alignment:'Lawful / Nuetral'}, {alignment:'Lawful / Evil'}, {alignment:'Nuetral / Good'}, {alignment:'Nuetral / Nuetral'}, {alignment:'Nuetral / Evil'}, {alignment:'Chaotic / Good'}, {alignment:'Chaotic / Nuetral'}, {alignment:'Chaotic / Evil'}]")
-							li(ng-repeat="alignment in Alignments")
-								ul: a(class = "lists")
-									|{{alignment.alignment}}
+						ul: a(class = "lists") Lawful / Good
+						ul: a(class = "lists") Lawful / Nuetral
+						ul: a(class = "lists") Lawful / Evil
+						ul: a(class = "lists") Nuetral / Good
+						ul: a(class = "lists") Nuetral / Nuetral
+						ul: a(class = "lists") Nuetral / Evil
+						ul: a(class = "lists") Chaotic / Good
+						ul: a(class = "lists") Chaotic / Nuetral
+						ul: a(class = "lists") Chaotic / Evil
 				input(type = "text", class = "form-control", id = "AlignmentInput", placeholder = "Insert Alignment Here")

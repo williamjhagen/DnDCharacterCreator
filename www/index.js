@@ -1,7 +1,6 @@
 
 window.onload = function(){
 	var CreateCharacterButton = document.getElementById("CreatorButton");
-	console.log(CreateCharacterButton);
 	CreateCharacterButton.addEventListener("mouseover", function(){
 		CreateCharacterButton.src = "assets/CreateCharacterButtonHover.png";
 	});

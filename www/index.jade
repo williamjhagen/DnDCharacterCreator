@@ -4,21 +4,24 @@ html(lang = "en", ng-app="")
    script(src = "js/Jquery.min.js")
    script(src="js/bootstrap.min.js")
    link(rel = "stylesheet", type = "text/css", href = "css/bootstrap.min.css")
+   link(rel = "stylesheet", type = "text/css", href = "css/index.css")
    script(src="js/angular.min.js")
    script(src="index.js")
    title D&D Character Creator
   body("body")
-    img(id = "logo" src= "assets/Logo.png",
-     alt= "IntroImage", height = 200, width = 300)
-    br
-    a(href = "CreateCharacter.html"): img.navButtons(id = "CreatorButton", 
-     src = "assets/CreateCharacterButton.png", 
-     alt="Create Character", height = 36, width = 200) 
-    br
-    a(href = "Analytics.html"): img.navButtons(id = "AnalyticsButton",
-     src = "assets/AnalyticsButton.png", 
-     alt = "Analytics", height = 36, width = 200)
-    br
-    a(href = "About.html"): img.navButtons(id = "AboutButton",
-     src = "assets/AboutButton.png", 
-     alt = "About The Proejct", height = 36, width = 200)
+    div#center
+      img(id = "logo" src= "assets/Logo.png",
+       alt= "IntroImage", height = 220, width = 300)
+      br
+      div#buttons
+        a(href = "CreateCharacter.html"): img.navButtons(id = "CreatorButton", 
+         src = "assets/CreateCharacterButton.png", 
+         alt="Create Character", height = 36, width = 220) 
+        br
+        a(href = "Analytics.html"): img.navButtons(id = "AnalyticsButton",
+         src = "assets/AnalyticsButton.png", 
+         alt = "Analytics", height = 36, width = 220)
+        br
+        a(href = "About.html"): img.navButtons(id = "AboutButton",
+         src = "assets/AboutButton.png", 
+         alt = "About The Proejct", height = 36, width = 220)
