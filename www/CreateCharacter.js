@@ -1,4 +1,4 @@
-var pageNum = 0;
+var pageNum = 1;
 var scope;
 var pages = [ getFile("BasicInfo.html"), getFile("Stats.html"), getFile("Backstory.html")];
 var currentPage = pages[pageNum];

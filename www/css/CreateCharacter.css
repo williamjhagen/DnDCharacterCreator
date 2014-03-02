@@ -1,0 +1,49 @@
+#body{
+    background-color:#FFF;
+}
+
+#explicitlyTrustedHtml{
+    width:30em;
+    padding:1em;
+    margin-left:40px;
+}
+
+.col-lg-6{
+    margin-top:1em;
+}
+
+.input-group{
+    margin-top:1em;
+}
+
+#container{
+    margin-left: 10em;
+    width:500px;
+    height:400px;
+    background-color:#FF9955;
+    border-style: ridge;
+    border-width: 5px;
+    border-color: #DDDDAA;
+}
+
+#header{
+    background-color:#FFF;
+    width:500px;
+    margin-left:10em;
+    margin-top:10px;
+    text-align:center;
+    border-style:outset;
+    border-color:#DDA;
+    background-color:#FF9955;
+
+}
+#forwardButton{
+    margin-top:20px;
+    margin-left:282px;
+    background-color:#FFF;
+}
+#backButton{
+    margin-top:20px;
+    background-color:#FFF;
+    margin-left:53px;
+}

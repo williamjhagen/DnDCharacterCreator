@@ -8,6 +8,12 @@ html
 		link(rel = "stylesheet", type = "text/css", href = "css/CreateCharacter.css")
 		link(rel = "stylesheet", type = "text/css", href = "css/bootstrap.min.css")
 		script(src="CreateCharacter.js")
-	body(ng-app="ngBindHtml")
-		div(ng-controller = "myCtrl")
-			div(ng-bind-html = "explicitlyTrustedHtml", id = "explicitlyTrustedHtml")
+	body(ng-app="ngBindHtml", id = "body")
+		div#header
+			h3 D&D Character Creator -- Basic Info
+		div(id = "container")
+			div(ng-controller = "myCtrl")
+				div(ng-bind-html = "explicitlyTrustedHtml", id = "explicitlyTrustedHtml")
+			div#backForwardButtons
+				button(type = "button", id = "backButton", class = "btn") Back
+				button(type = "button", id = "forwardButton", class = "btn") Next
