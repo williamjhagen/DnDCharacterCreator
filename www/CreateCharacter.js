@@ -1,4 +1,4 @@
-var pageNum = 1;
+var pageNum = 2;
 var scope;
 var pages = [ getFile("BasicInfo.html"), getFile("Stats.html"), getFile("Backstory.html")];
 var currentPage = pages[pageNum];
@@ -17,7 +17,6 @@ function getFile(nameOfFile){
 }
 
 function nextPage(){
-	console.log("here");
 	++pageNum;
 	currentPage = pages[pageNum];
 }
