@@ -23,7 +23,8 @@
     background-color:#FF9955;
     border-style: ridge;
     border-width: 5px;
-    border-color: #DDDDAA;
+    border-color: #BF8660;
+    overflow:auto;
 }
 
 #header{
@@ -33,7 +34,7 @@
     margin-top:10px;
     text-align:center;
     border-style:outset;
-    border-color:#DDA;
+    border-color:#BF8660;
     background-color:#FF9955;
 
 }

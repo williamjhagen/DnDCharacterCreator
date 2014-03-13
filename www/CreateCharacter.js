@@ -1,12 +1,16 @@
-var pageNum = 2;
-var scope;
-var pages = [ getFile("BasicInfo.html"), getFile("Stats.html"), getFile("Backstory.html")];
-var currentPage = pages[pageNum];
-var myApp = angular.module('ngBindHtml',['ngSanitize'])
-
-myApp.controller('myCtrl', function myCtrl($sce, $scope) {
-	$scope.explicitlyTrustedHtml = $sce.trustAsHtml(currentPage);
-});
+var pageNum = 0;
+var page;
+var pages = [ getFile("BasicInfo.html"), getFile("Stats.html"),undefined, undefined, getFile("Backstory.html")];
+window.onload = function(){
+	page = document.getElementById("explicitlyTrustedHtml");
+	page.innerHTML = pages[pageNum];
+	var nextBtn = document.getElementById("forwardButton");
+	var backbtn = document.getElementById("backButton");
+	nextBtn.addEventListener("click", nextPage);
+	backbtn.addEventListener("click", backPage);
+	pages[2] = constructSpellsPage();
+	pages[3] = constructFeatsPage();
+}
 
 function getFile(nameOfFile){
 	var request = new XMLHttpRequest();
@@ -17,6 +21,21 @@ function getFile(nameOfFile){
 }
 
 function nextPage(){
-	++pageNum;
-	currentPage = pages[pageNum];
+	page.innerHTML = pages[++pageNum];
+}
+
+function backPage(){
+	page.innerHTML = pages[--pageNum];
+}
+
+function constructSkillsPage(){
+	var l
+}
+
+function constructFeatsPage(){
+
+}
+
+function constructSpellsPage(){
+
 }
