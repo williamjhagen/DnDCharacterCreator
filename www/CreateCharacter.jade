@@ -1,6 +1,8 @@
 doctype html
 html
 	head
+		meta(http-equiv="Cache-Control" content="max-age=0")
+		meta(http-equiv="Cache-Control" content="no-store")
 		script(src="js/Jquery.min.js")
 		script(src="js/bootstrap.min.js")
 		link(rel = "stylesheet", type = "text/css", href = "css/CreateCharacter.css")
@@ -11,6 +13,6 @@ html
 			h3 D&D Character Creator -- Basic Info
 		div(id = "container")
 			div(id = "explicitlyTrustedHtml")
-				div#backForwardButtons
-					button(type = "button", id = "backButton", class = "btn") Back
-					button(type = "button", id = "forwardButton", class = "btn") Next
+			div#backForwardButtons
+				button(type = "button", id = "backButton", class = "btn") Back
+				button(type = "button", id = "forwardButton", class = "btn") Next

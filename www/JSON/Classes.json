@@ -1,15 +1,533 @@
 {
-	"classes":[
-		"Barbarian", 
-		"Bard",
-		"Cleric",
-		"Druid",
-		"Fighter", 
-		"Monk", 
-		"Paladin", 
-		"Ranger", 
-		"Rogue", 
-		"Sorcerer", 
-		"Wizard"
-		]
+    "classes": {
+        "Barbarian": {
+            "skills": [
+                "Climb",
+                "Craft",
+                "Handle Animal",
+                "Intimidate",
+                "Jump",
+                "Listen",
+                "Ride",
+                "Survival",
+                "Swim"
+            ],
+            "skillMod": 4,
+            "hitDie": 12
+        },
+        "Bard": {
+            "skills": [
+                "Appraise",
+                "Balance",
+                "Bluff",
+                "Climb",
+                "Concentration",
+                "Craft",
+                "Decipher Script",
+                "Diplomacy",
+                "Disguise",
+                "Escape Artist",
+                "Gather Information",
+                "Hide",
+                "Jump",
+                "Knowledge",
+                "Listen",
+                "Move Silently",
+                "Perform",
+                "Profession",
+                "Sense Motive",
+                "Sleight of Hand",
+                "Speak Language",
+                "Spellcraft",
+                "Swim",
+                "Tumble",
+                "Use Magic Device"
+            ],
+            "skillMod": 6,
+            "spellsKnown": {
+                "1": [
+                    4
+                ],
+                "2": [
+                    5,
+                    2
+                ],
+                "3": [
+                    6,
+                    3
+                ],
+                "4": [
+                    6,
+                    3,
+                    2
+                ],
+                "5": [
+                    6,
+                    4,
+                    3
+                ],
+                "6": [
+                    6,
+                    4,
+                    3
+                ],
+                "7": [
+                    6,
+                    4,
+                    4,
+                    2
+                ],
+                "8": [
+                    6,
+                    4,
+                    4,
+                    3
+                ],
+                "9": [
+                    6,
+                    4,
+                    4,
+                    3
+                ],
+                "10": [
+                    6,
+                    4,
+                    4,
+                    4,
+                    2
+                ],
+                "11": [
+                    6,
+                    4,
+                    4,
+                    4,
+                    3
+                ],
+                "12": [
+                    6,
+                    4,
+                    4,
+                    4,
+                    3
+                ],
+                "13": [
+                    6,
+                    4,
+                    4,
+                    4,
+                    4,
+                    2
+                ],
+                "14": [
+                    6,
+                    4,
+                    4,
+                    4,
+                    4,
+                    3
+                ],
+                "15": [
+                    6,
+                    4,
+                    4,
+                    4,
+                    4,
+                    3
+                ],
+                "16": [
+                    6,
+                    5,
+                    4,
+                    4,
+                    4,
+                    4,
+                    2
+                ],
+                "17": [
+                    6,
+                    5,
+                    5,
+                    4,
+                    4,
+                    4,
+                    3
+                ],
+                "18": [
+                    6,
+                    5,
+                    5,
+                    5,
+                    4,
+                    4,
+                    3
+                ],
+                "19": [
+                    6,
+                    5,
+                    5,
+                    5,
+                    5,
+                    4,
+                    4
+                ],
+                "20": [
+                    6,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    4
+                ]
+            },
+            "hitDie": 6
+        },
+        "Cleric": {
+            "skills": [
+                "Concentration",
+                "Craft",
+                "Diplomacy",
+                "Heal",
+                "Knowledge",
+                "Profession",
+                "Spellcraft"
+            ],
+            "skillMod": 2,
+            "hitDie": 8
+        },
+        "Druid": {
+            "skillMod": 4,
+            "hitDie": 8,
+            "skills": [
+                "Concentration",
+                "Craft",
+                "Diplomacy",
+                "Handle Animal",
+                "Heal",
+                "Knowledge",
+                "Listen",
+                "Profession",
+                "Ride",
+                "Spellcraft",
+                "Spot",
+                "Survival",
+                "Swim"
+            ]
+        },
+        "Fighter": {
+            "skillMod": 2,
+            "hitDie": 10,
+            "bonusFeats": [
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+            ],
+            "skills": [
+                "Climb",
+                "Craft",
+                "Handle Animal",
+                "Intimidate",
+                "Jump",
+                "Ride",
+                "Swim"
+            ]
+        },
+        "Monk": {
+            "hitDie": 8,
+            "skillMod": 4,
+            "skills": [
+                "Balance",
+                "Climb",
+                "Concentration",
+                "Craft",
+                "Diplomacy",
+                "Escape Artist",
+                "Hide",
+                "Jump",
+                "Knowledge",
+                "Listen",
+                "Move Silently",
+                "Perform",
+                "Profession",
+                "Sense Motive",
+                "Spot",
+                "Swim",
+                "Tumble"
+            ]
+        },
+        "Paladin": {
+            "hitDie": 10,
+            "skillMod": 2,
+            "skills": [
+                "Concentration",
+                "Craft",
+                "Diplomacy",
+                "Handle Animal",
+                "Heal",
+                "Knowledge",
+                "Profession",
+                "Ride",
+                "Sense Motive"
+            ]
+        },
+        "Ranger": {
+            "hitDie": 8,
+            "skillMod": 6,
+            "skills": [
+                "Climb",
+                "Concentration",
+                "Craft",
+                "Handle Animal",
+                "Heal",
+                "Hide",
+                "Jump",
+                "Knowledge",
+                "Listen",
+                "Move Silently",
+                "Profession",
+                "Ride",
+                "Search",
+                "Spot",
+                "Survival",
+                "Swim",
+                "Use Rope"
+            ]
+        },
+        "Rogue": {
+            "hitDie": 6,
+            "skillMod": 8,
+            "skills": [
+                "Appraise",
+                "Balance",
+                "Bluff",
+                "Climb",
+                "Craft",
+                "Decipher Script",
+                "Diplomacy",
+                "Disable Device",
+                "Disguise",
+                "Escape Artist",
+                "Forgery",
+                "Gather Information",
+                "Hide",
+                "Intimidate",
+                "Jump",
+                "Knowledge",
+                "Listen",
+                "Move Silently",
+                "Open Lock",
+                "Perform",
+                "Profession",
+                "Search",
+                "Sense Motive",
+                "Sleight of Hand",
+                "Spot",
+                "Swim",
+                "Tumble",
+                "Use Magic Device",
+                "Use Rope"
+            ]
+        },
+        "Sorcerer": {
+            "hitDie": 4,
+            "skillMod": 2,
+            "skills": [
+                "Bluff",
+                "Concentration",
+                "Knowledge",
+                "Profession",
+                "Spellcraft"
+            ],
+            "spellsKnown": {
+                "1": [
+                    4,
+                    2
+                ],
+                "2": [
+                    5,
+                    2
+                ],
+                "3": [
+                    5,
+                    3
+                ],
+                "4": [
+                    6,
+                    3,
+                    1
+                ],
+                "5": [
+                    6,
+                    4,
+                    2
+                ],
+                "6": [
+                    7,
+                    4,
+                    2,
+                    1
+                ],
+                "7": [
+                    7,
+                    5,
+                    3,
+                    2
+                ],
+                "8": [
+                    8,
+                    5,
+                    3,
+                    2,
+                    1
+                ],
+                "9": [
+                    8,
+                    5,
+                    4,
+                    3,
+                    2
+                ],
+                "10": [
+                    9,
+                    5,
+                    4,
+                    3,
+                    2,
+                    1
+                ],
+                "11": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    3,
+                    2
+                ],
+                "12": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    3,
+                    2,
+                    1
+                ],
+                "13": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    4,
+                    3,
+                    2
+                ],
+                "14": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    4,
+                    3,
+                    2,
+                    1
+                ],
+                "15": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    4,
+                    4,
+                    3,
+                    2
+                ],
+                "16": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    4,
+                    4,
+                    3,
+                    2,
+                    1
+                ],
+                "17": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    4,
+                    4,
+                    3,
+                    3,
+                    2
+                ],
+                "18": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    4,
+                    4,
+                    3,
+                    3,
+                    2,
+                    1
+                ],
+                "19": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    4,
+                    4,
+                    3,
+                    3,
+                    3,
+                    2
+                ],
+                "20": [
+                    9,
+                    5,
+                    5,
+                    4,
+                    4,
+                    4,
+                    3,
+                    3,
+                    3,
+                    3
+                ]
+            }
+        },
+        "Wizard": {
+            "hitDie": 4,
+            "skillMod": 2,
+            "skills": [
+                "Bluff",
+                "Concentration",
+                "Knowledge",
+                "Profession",
+                "Spellcraft"
+            ]
+        }
+    }
 }

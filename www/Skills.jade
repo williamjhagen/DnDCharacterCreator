@@ -1,0 +1,31 @@
+link(rel = "stylesheet", type = "text/css", href = "css/skills.css")
+div(class = "tabbable " id = "skillDiv")
+	ul(class = "nav nav-pills nav-stacked" id = "pills")
+			li(class = "active skillList" id = "classPill")
+				a(class = "skillList" href = "#classSkills" data-toggle="tab") Class Skills
+			li: a(class = "skillList" href = "#strSkills" data-toggle="tab") Str
+			li: a(class = "skillList" href = "#dexSkills" data-toggle="tab") Dex
+			li: a(class = "skillList" href = "#conSkills" data-toggle="tab") Con
+			li: a(class = "skillList" href = "#intSkills" data-toggle="tab") Int
+			li: a(class = "skillList" href = "#wisSkills" data-toggle="tab") Wis
+			li: a(class = "skillList" href = "#chaSkills" data-toggle="tab") Cha
+			li: a(class = "skillList" href = "#otherSkills" data-toggle="tab") Other
+	div(class = "tab-content" id = "skillsContent")
+		div(class = "tab-pane active" id = "classSkills")
+		div(class = "tab-pane" id = "strSkills")
+		div(class = "tab-pane" id = "dexSkills")
+		div(class = "tab-pane" id = "conSkills")
+		div(class = "tab-pane" id = "intSkills")
+		div(class = "tab-pane" id = "wisSkills")
+		div(class = "tab-pane" id = "chaSkills")
+		div(class = "tab-pane" id = "otherSkills")
+	div(id = "selected")
+		div(class = "btn-group-vertical" id = "btnGroup")
+			button(id = "plusBtn" type = "button" class = "btn btn-default")
+				span(class = "glyphicon-plus")
+			button(id = "minusBtn" type = "button" class = "btn btn-default")
+				span(class = "glyphicon-minus")
+		article(id = "selectedInput") 
+	div(id = "chosenSkills")
+		article(id = "pointsRemaining") Points Left: 0
+		div(id = "chosenSkillList")

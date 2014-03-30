@@ -1,13 +1,13 @@
 div(id = "BasicInfoDiv")
-	div(class = "input-group" id = "NameInput")
+	div(class = "input-group")
 		span(class = "input-group-addon")
 			|Name 
-		input(type = "text", class = "form-control" placeholder = "Insert Name Here")
+		input(type = "text", id = "NameInput" class = "form-control" placeholder = "Insert Name Here")
 
-	div(class = "input-group" id = "LevelInput")
+	div(class = "input-group")
 		span(class = "input-group-addon")
 			|Level 
-		input(type = "text", class = "form-control" placeholder = "Whole numbers from 1-20 please")
+		input(type = "text", id = "LevelInput" class = "form-control" placeholder = "Whole numbers from 1-20 please")
 
 	div(class = "row")
 		div(class = "col-lg-6")
@@ -27,7 +27,7 @@ div(id = "BasicInfoDiv")
 						ul: a(class = "lists") Rogue
 						ul: a(class = "lists") Sorcerer
 						ul: a(class = "lists") Wizard
-				input(type = "text", class = "form-control", id = "ClassInput", placeholder = "Insert Class Here")
+				input(type = "text", class = "form-control", id = "ClassInput", placeholder = "Insert Class Here", readonly)
 
 
 		div(class = "col-lg-6")
@@ -44,7 +44,7 @@ div(id = "BasicInfoDiv")
 						ul: a(class = "lists") Halfling
 						ul: a(class = "lists") Half-Orc
 						ul: a(class = "lists") Human
-				input(type = "text", class = "form-control", id = "RaceInput", placeholder = "Insert Race Here")
+				input(type = "text", class = "form-control", id = "RaceInput", placeholder = "Insert Race Here", readonly)
 
 		div(class = "col-lg-6")
 			div(class = "input-group")
@@ -57,7 +57,7 @@ div(id = "BasicInfoDiv")
 						ul: a(class = "lists") Female
 						ul: a(class = "lists") Neither
 						ul: a(class = "lists") Other
-				input(type = "text", class = "form-control", id = "GenderInput", placeholder = "Insert Gender Here")
+				input(type = "text", class = "form-control", id = "GenderInput", placeholder = "Insert Gender Here", readonly)
 						
 		div(class = "col-lg-6")
 			div(class = "input-group")
@@ -75,4 +75,4 @@ div(id = "BasicInfoDiv")
 						ul: a(class = "lists") Chaotic / Good
 						ul: a(class = "lists") Chaotic / Nuetral
 						ul: a(class = "lists") Chaotic / Evil
-				input(type = "text", class = "form-control", id = "AlignmentInput", placeholder = "Insert Alignment Here")
+				input(type = "text", class = "form-control", id = "AlignmentInput", placeholder = "Insert Alignment Here", readonly)

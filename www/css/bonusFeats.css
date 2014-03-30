@@ -1,0 +1,16 @@
+#featInputsContainer{
+    width:170px;  
+}
+
+#fighterFeatsContainer{
+    position:relative;
+    width:170px;
+    margin-left:200px;
+    margin-top:-248px;
+}
+
+#title{
+    text-align:center;
+    margin-top:-10px;
+    font-size:150%
+}

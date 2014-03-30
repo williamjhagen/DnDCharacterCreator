@@ -1,0 +1,86 @@
+#skillDiv{
+    height:310px;
+}
+
+#pills{
+    height:331px;
+    width:65px;
+    margin-top:-10px;
+    margin-left:-50px;
+    background-color:white;
+    border-style:solid;
+    border-color:#56F;
+    padding:0;
+    
+}
+
+#classPill{
+    margin-top:3px;
+}
+
+#skillsContent{
+    position:relative;
+    top:-331px;
+    left:20px;
+    height:252px;
+    width:275px;
+    background-color:white;
+    border-style:solid;
+    border-color:#56F;
+    padding:2px;
+	-webkit-column-count:2; /* Chrome, Safari, Opera */
+	-moz-column-count:2; /* Firefox */
+	column-count:2;
+	
+}
+
+.skillList{
+    margin-top:-4px;
+}
+
+#selected{
+    background-color:white;
+    height:73px;
+    width:275px;
+    position:relative;
+    top:-325px;
+    margin-left:20px;
+    border-style:solid;
+    border-color:#56F;
+}
+
+#selectedInput{
+	font-size:20px;
+	margin-left:55px;
+	margin-top:-45px;
+}
+
+#skillField{
+   margin-top:-49px;
+   margin-left:42px;
+   width:80%;
+}
+
+#chosenSkills{
+	background-color:white;
+    border-style:solid;
+    border-color:#56F;
+	position:relative;
+	top:-656px;
+	left:300px;
+	height:331px;
+	width:130px;
+}
+
+#pointsRemaining{
+    padding:10px;
+}
+
+#chosenSkillList{
+	height:285px;
+	width:124px;
+	font-size:12px;
+	overflow:auto;
+	padding:5px;
+}
+
