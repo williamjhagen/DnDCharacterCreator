@@ -1,10 +1,10 @@
 #featInputsContainer{
-    width:170px;  
+    width:200px;  
 }
 
 #fighterFeatsContainer{
     position:relative;
-    width:170px;
+    width:200px;
     margin-left:200px;
     margin-top:-248px;
 }
@@ -13,4 +13,23 @@
     text-align:center;
     margin-top:-10px;
     font-size:150%
+}
+
+#featInputsContainerContainer{
+    background-color:black;
+    width:200px;
+    height:250px;
+    margin-left:-20px;
+    overflow:auto;
+    
+}
+
+#fighterFeatsContainer{
+    background-color:black;
+    overflow:auto;
+    
+}
+
+.featInputsGroup{
+	padding:1px;
 }

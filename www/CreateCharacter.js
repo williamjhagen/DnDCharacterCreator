@@ -146,7 +146,7 @@ function nextPage(){
 		var featList = document.getElementsByClassName("featInputs");
 		var fighterFeats;
 		Character.Feats = [];
-		if(Character.Class == "fighter")
+		if(Character.Class == "Fighter")
 			fighterFeats = document.getElementsByClassName("fighterFeatInputs");
 
 		for (var i = 0; i < featList.length; i++) {
@@ -160,14 +160,15 @@ function nextPage(){
 			}
 		};
 
+		console.log(fighterFeats);
 		if(fighterFeats != undefined){
 			for (var i = 0; i < fighterFeats.length; i++) {
-				if(featList[i].value.length < 1){
+				if(fighterFeats[i].value.length < 1){
 					canContinue = false;
-					featList[i].style.border = "2px solid #F00";
+					fighterFeats[i].style.border = "2px solid #F00";
 				}
 				else{
-					featList[i].style.border = "";
+					fighterFeats[i].style.border = "";
 					Character.Feats.push(featList[i].value);
 				}
 			};
@@ -473,8 +474,11 @@ function constructFeatsPage(){
 	};
 
 	if(Character.Class == "Fighter"){
+		var fighterColContainer = document.createElement("div");
+		fighterColContainer.id = "fighterColumnContainer";
 		var fighterCol = document.createElement("div");
 		fighterCol.id = "fighterColumn";
+		fighterColContainer.appendChild(fighterCol);
 		document.getElementById("featsCSS").href = "css/bonusFeats.css";
 		var fighterContainer = document.createElement("div");
 		fighterContainer.id = "fighterFeatsContainer";
