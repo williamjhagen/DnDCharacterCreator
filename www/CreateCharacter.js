@@ -1,6 +1,6 @@
 var pageNum = 0;
 var page;
-var pages = [ getFile("BasicInfo.html"), getFile("Stats.html"),getFile("Skills.html"), getFile("Feats.html"),getFile("Spells.html"), getFile("Backstory.html")];
+var pages = [ getFile("BasicInfo.html"), getFile("Stats.html"),getFile("Skills.html"), getFile("Feats.html"),getFile("Spells.html"), getFile("Backstory.html"), getFile("Review.html")];
 var Character = {};
 var classData = eval("("+getFile("JSON/Classes.json")+")");
 var skillsData = eval("("+getFile("JSON/Skills.json")+")");
@@ -159,8 +159,6 @@ function nextPage(){
 				Character.Feats.push(featList[i].value);
 			}
 		};
-
-		console.log(fighterFeats);
 		if(fighterFeats != undefined){
 			for (var i = 0; i < fighterFeats.length; i++) {
 				if(fighterFeats[i].value.length < 1){
@@ -174,8 +172,37 @@ function nextPage(){
 			};
 		}
 	}
-	else if(pagenum == 4){
+	//spells page
+	else if(pageNum == 4){
+		var spellList = document.getElementsByClassName("spellInputs");
+		if(spellList.length > 0)
+		{		
+			Character.Spells = [];
 
+			for (var i = 0; i < spellList.length; i++) {
+				if(spellList[i].value.length < 1){
+					canContinue = false;
+					spellList[i].style.border = "2px solid #F00";
+				}
+				else{
+					spellList[i].style.border = "";
+					Character.Spells.push(spellList[i].value);
+				}
+			};
+		}
+	}
+	//backstory page
+	else if(pageNum == 5){
+		var backstory = document.getElementById("BackstoryForm").value;
+		if(backstory == undefined || backstory.length < 1) backstory = "";
+
+		Character.Backstory = backstory;
+	}
+	//review page
+	else if(pageNum == 6){
+		canContinue = false;
+		//PUSH TO DATA TO SERVER
+		//AKA MAGICAL NONSENSE
 	}
 	if(!canContinue) return;
 	console.log(Character);
@@ -195,10 +222,16 @@ function nextPage(){
 	else if(pageNum == 5){
 		document.getElementById('header').querySelector('h3').innerHTML = "Character Creator -- Back Story";
 	}
+	else if(pageNum == 6){
+		constructReviewPage();
+	}
 }
 
 function backPage(){
-	page.innerHTML = pages[--pageNum];
+	if(pageNum > 0){
+		pageNum -= 2;
+		nextPage();
+	}
 }
 
 function constructBasicInfoPage(){
@@ -265,11 +298,13 @@ function constructStatsPage(){
 		document.getElementById("rollBtn").innerHTML = "Reset Stats";
 	});
 }
+
 function constructSkillsPage(){
 	document.getElementById('header').querySelector('h3').innerHTML = "Character Creator -- Skills";
 	document.getElementById('container').style.overflow = "hidden";
 	document.usedSkills = [];
-	var pointsLeft = Math.floor((Character.Level + 3) * (classData.classes[Character.Class].skillMod + ((Character.Intelligence - 10) / 2)));
+	var skillMod = Math.max(classData.classes[Character.Class].skillMod, 0)
+	var pointsLeft = Math.floor((Character.Level + 3) * (skillMod + ((Character.Intelligence - 10) / 2)));
 	document.getElementById("pointsRemaining").innerHTML = "Points Left: " + pointsLeft.toString();
 	
 	document.getElementById('plusBtn').addEventListener("click", function(e){
@@ -508,5 +543,92 @@ function constructFeatsPage(){
 }
 
 function constructSpellsPage(){
+	if(classData.classes[Character.Class].spellsKnown == undefined) nextPage();
+	
 	document.getElementById('header').querySelector('h3').innerHTML = "Character Creator -- Spells";
+	document.getElementById('container').style.overflow = "auto";
+
+	var numSpells = classData.classes[Character.Class].spellsKnown[Character.Level];
+	var container = document.getElementById("spellsInputsContainer");
+	var spellLevel = numSpells.length;
+	for(var k = 0; k < spellLevel; ++k){
+		var groupLabel = document.createElement("label");
+		groupLabel.innerHTML = "Level " + k + " Spells";
+		groupLabel.className = "grouplabel";
+		container.appendChild(groupLabel);
+		for (var i = 0; i < numSpells[k]; i++) {
+			var group = document.createElement("div");
+			group.className = "spellInputsGroup"
+			var label = document.createElement("span")
+			label.className = "input-group-addon";
+			label.innerHTML = "Spell " + (i + 1) + ": ";
+	
+			var el = document.createElement("input");
+			el.className = "form-control spellInputs";
+	
+			group.appendChild(label);
+			group.appendChild(el);
+	
+			container.appendChild(group);
+		};
+	};
+}
+
+function constructReviewPage(){
+	document.getElementById('header').querySelector('h3').innerHTML = "Character Creator -- Review";
+	document.getElementById("forwardButton").innerHTML = "Finish";
+
+	document.getElementById("name").innerHTML = "Name: " + Character.Name;
+	document.getElementById("level").innerHTML = "Level: " + Character.Level;
+	document.getElementById("class").innerHTML = "Class: " + Character.Class;
+	document.getElementById("race").innerHTML = "Race: " + Character.Race;
+	document.getElementById("gender").innerHTML = "Gender: " + Character.Gender;
+	document.getElementById("alignment").innerHTML = "Alignment: " + Character.Alignment;
+
+	document.getElementById("str").innerHTML = "Strength: " + Character.Strength;
+	document.getElementById("dex").innerHTML = "Dexterity: " + Character.Dexterity;
+	document.getElementById("con").innerHTML = "Constitution: " + Character.Constitution;
+	document.getElementById("int").innerHTML = "Intelligence: " + Character.Intelligence;
+	document.getElementById("wis").innerHTML = "Wisdom: " + Character.Wisdom;
+	document.getElementById("cha").innerHTML = "Charisma: " + Character.Charisma;
+
+	var skillsDiv = document.getElementById("skills");
+	var numSkills = Character.Skills.length;
+	for(var i = 0; i < numSkills; ++i){
+		var el = document.createElement("p");
+		el.innerHTML = Character.Skills[i];
+		skillsDiv.appendChild(el);
+	};
+
+	var featsDiv = document.getElementById("feats");
+	var numFeats = Character.Feats.length;
+	for(var i = 0; i < numFeats; ++i){
+		var el = document.createElement("p");
+		el.innerHTML = Character.Feats[i];
+		featsDiv.appendChild(el);
+	};
+
+	if(Character.Spells != undefined && Character.Spells.length > 0)
+	{
+		var spellsDiv = document.getElementById("spells");
+		var numSpells = Character.Spells.length;
+		for(var i = 0; i < numSpells; ++i){
+			var el = document.createElement("p");
+			el.innerHTML = Character.Spells[i];
+			spellsDiv.appendChild(el);
+		};
+	}
+	else{
+		document.getElementById("explicitlyTrustedHtml").removeChild(document.getElementById("spells"));
+	}
+
+	var backstory = Character.Backstory;
+	var backstoryArticle = document.getElementById("backstory");
+
+	if(Character.Backstory != ""){
+		backstoryArticle.innerHTML = Character.Backstory;
+	}
+	else{
+		backstoryArticle.innerHTML = "This character has no backstory.";
+	}
 }
