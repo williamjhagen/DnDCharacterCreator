@@ -19,6 +19,7 @@ div(id = "BasicInfoDiv")
 					ul(class = "dropdown-menu")
 						ul: a(class = "lists") Barbarian
 						ul: a(class = "lists") Bard
+						ul: a(class = "lists") Cleric
 						ul: a(class = "lists") Druid
 						ul: a(class = "lists") Fighter
 						ul: a(class = "lists") Monk
@@ -61,18 +62,18 @@ div(id = "BasicInfoDiv")
 						
 		div(class = "col-lg-6")
 			div(class = "input-group")
-				div(class = "input-group-btn")
+				div(class = "input-group-btn dropup")
 					button(type="button", class = "btn btn-default dropdown-toggle", data-toggle = "dropdown")
 						|Alignment 
 						span(class = "caret")
 					ul(class = "dropdown-menu")
 						ul: a(class = "lists") Lawful / Good
-						ul: a(class = "lists") Lawful / Nuetral
+						ul: a(class = "lists") Lawful / Neutral
 						ul: a(class = "lists") Lawful / Evil
-						ul: a(class = "lists") Nuetral / Good
-						ul: a(class = "lists") Nuetral / Nuetral
-						ul: a(class = "lists") Nuetral / Evil
+						ul: a(class = "lists") Neutral / Good
+						ul: a(class = "lists") Neutral / Neutral
+						ul: a(class = "lists") Neutral / Evil
 						ul: a(class = "lists") Chaotic / Good
-						ul: a(class = "lists") Chaotic / Nuetral
+						ul: a(class = "lists") Chaotic / Neutral
 						ul: a(class = "lists") Chaotic / Evil
 				input(type = "text", class = "form-control", id = "AlignmentInput", placeholder = "Insert Alignment Here", readonly)

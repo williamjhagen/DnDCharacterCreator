@@ -12,6 +12,7 @@
                 "Survival",
                 "Swim"
             ],
+            "primaryStat":"Strength",
             "skillMod": 4,
             "hitDie": 12
         },
@@ -43,6 +44,7 @@
                 "Tumble",
                 "Use Magic Device"
             ],
+            "primaryStat": "Charisma",
             "skillMod": 6,
             "spellsKnown": {
                 "1": [
@@ -192,6 +194,7 @@
                 "Profession",
                 "Spellcraft"
             ],
+            "primaryStat": "Wisdom",
             "skillMod": 2,
             "hitDie": 8
         },
@@ -217,6 +220,7 @@
         "Fighter": {
             "skillMod": 2,
             "hitDie": 10,
+            "primaryStat":"Strength",
             "bonusFeats": [
                 1,
                 1,
@@ -252,6 +256,7 @@
         "Monk": {
             "hitDie": 8,
             "skillMod": 4,
+            "primaryStat":"Strength",
             "skills": [
                 "Balance",
                 "Climb",
@@ -275,6 +280,7 @@
         "Paladin": {
             "hitDie": 10,
             "skillMod": 2,
+            "primaryStat": "Strength",
             "skills": [
                 "Concentration",
                 "Craft",
@@ -290,6 +296,7 @@
         "Ranger": {
             "hitDie": 8,
             "skillMod": 6,
+            "primaryStat":"Dexterity",
             "skills": [
                 "Climb",
                 "Concentration",
@@ -313,6 +320,7 @@
         "Rogue": {
             "hitDie": 6,
             "skillMod": 8,
+            "primaryStat":"Dexterity",
             "skills": [
                 "Appraise",
                 "Balance",
@@ -348,6 +356,7 @@
         "Sorcerer": {
             "hitDie": 4,
             "skillMod": 2,
+            "primaryStat": "Charisma",
             "skills": [
                 "Bluff",
                 "Concentration",
@@ -520,6 +529,7 @@
         },
         "Wizard": {
             "hitDie": 4,
+            "primaryStat":"Intelligence",
             "skillMod": 2,
             "skills": [
                 "Bluff",
